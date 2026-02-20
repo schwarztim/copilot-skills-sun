@@ -32,6 +32,20 @@ cp -r sun-demo ~/.copilot/skills/
 
 Both skills leverage Playwright for headless browser automation and support corporate SSO (Azure AD, Okta, etc.).
 
+## Bonus: host-auth-template.mjs
+
+A generic, reusable Playwright-based SSO authentication script. Captures cookies and CSRF tokens from any web platform via headless browser automation. Configurable via environment variables or macOS Keychain — no hardcoded credentials.
+
+```bash
+# Configure for your service
+export MYSERVICE_INSTANCE_URL="https://your-instance.example.com"
+export MYSERVICE_USERNAME="user@example.com"
+export MYSERVICE_PASSWORD="..."
+
+# Run (headless or visible browser)
+node host-auth-template.mjs --headless
+```
+
 ## License
 
 MIT
